@@ -1,5 +1,5 @@
 {
-   "abstract" : "#",
+   "abstract" : "obfuscate email or html with randomized javascript",
    "author" : [
       "Christian Walde <walde.christian@googlemail.com>"
    ],
@@ -32,8 +32,10 @@
       },
       "runtime" : {
          "requires" : {
-            "perl" : "5.006",
-            "strictures" : 0
+            "Sub::Exporter::Simple" : 0,
+            "perl" : "5.010",
+            "strictures" : 0,
+            "utf8" : 0
          }
       },
       "test" : {
@@ -42,6 +44,7 @@
             "File::Temp" : 0,
             "Test::InDistDir" : 0,
             "Test::More" : 0,
+            "open" : 0,
             "strict" : 0,
             "warnings" : 0
          }
