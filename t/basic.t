@@ -35,7 +35,7 @@ sub test_mail_enkoding {
     my ( $input ) = @_;
 
     my $enkoders = [ { perl => sub { $_[0] }, js => "" } ];
-    my $mail = enkode_mail( $input, qq|"$input"|, { max_length => 1, enkoders => $enkoders } );
+    my $mail = enkode_mail( $input, { max_length => 1, enkoders => $enkoders } );
 
     is(
         $mail,
@@ -43,8 +43,8 @@ sub test_mail_enkoding {
 <script type="text/javascript">
 /* <![CDATA[ */
 function perl_enkoder(){var kode=
-"kode=\"document.write(\\\\\\"<a href=\\\\\\\\\\\\\\"mailto:meüep\\\\\\\\\\\\\\">\\\\\\\\\\\\\\"meü"+
-"ep\\\\\\\\\\\\\\"</a>\\\\\\");\""
+"kode=\"document.write(\\\\\"<a href=\\\\\\\\\\\\\"mailto:meüep\\\\\\\\\\\\\">meüep</a>\\\"+
+"\");\""
 ;var i,c,x;while(eval(kode));}perl_enkoder();
 /* ]]> */
 </script>
@@ -53,11 +53,11 @@ function perl_enkoder(){var kode=
     );
 
     my $mail2 = enkode_mail(
-        $input,    #
-        qq|"$input"|,
+        $input,
         {
             max_length      => 1,
             enkoders        => $enkoders,
+            link_text       => qq|"$input"|,
             link_attributes => qq|title="$input" class="$input"|,
             subject         => $input
         }
@@ -76,7 +76,7 @@ function perl_enkoder(){var kode=
 /* ]]> */
 </script>
 |,
-        "subject and link attribute options work as well"
+        "subject, link attribute and link text options work as well"
     );
 
     return;

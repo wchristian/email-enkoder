@@ -64,12 +64,13 @@ Generates an obfuscated email link.
 =cut
 
 sub enkode_mail {
-    my ( $email, $link_text, $options ) = @_;
+    my ( $email, $options ) = @_;
 
+    $options->{link_text} //= $email;
     $_ = defined $_ ? qq| $_|         : '' for $options->{link_attributes};
     $_ = defined $_ ? qq|?subject=$_| : '' for $options->{subject};
 
-    $email = qq|<a href="mailto:$email$options->{subject}"$options->{link_attributes}>$link_text</a>|;
+    $email = qq|<a href="mailto:$email$options->{subject}"$options->{link_attributes}>$options->{link_text}</a>|;
     my $link = enkode( $email, $options );
 
     return $link;
