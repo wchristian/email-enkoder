@@ -4,7 +4,7 @@ Email::Enkoder - obfuscate email or html with randomized javascript
 
 =head1 VERSION
 
-version 1.120830
+version 1.120831
 
 =head1 FUNCTIONS
 

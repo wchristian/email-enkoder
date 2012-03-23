@@ -53,7 +53,7 @@
    "provides" : {
       "Email::Enkoder" : {
          "file" : "lib/Email/Enkoder.pm",
-         "version" : "1.120830"
+         "version" : "1.120831"
       }
    },
    "release_status" : "stable",
@@ -69,6 +69,6 @@
          "web" : "https://github.com/wchristian/email-enkoder"
       }
    },
-   "version" : "1.120830"
+   "version" : "1.120831"
 }
 
