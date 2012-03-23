@@ -4,7 +4,7 @@ Email::Enkoder - obfuscate email or html with randomized javascript
 
 =head1 VERSION
 
-version 0.000001
+version 1.120830
 
 =head1 FUNCTIONS
 
@@ -27,7 +27,7 @@ Returns the default enkoders used to obfuscate html.
 Takes a javascript string definition and wraps it to fit in a defined number of
 columns.
 
-=head2 js_wrap_quote
+=head2 js_dbl_quote
 
 Takes a piece of javascript and quotes and escapes it for use as a string
 definition.
