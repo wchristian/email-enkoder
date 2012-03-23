@@ -13,6 +13,14 @@ run();
 done_testing;
 exit;
 
+=head1 WARNING
+
+Despite being single-quoted most of the strings in here need extra
+back-slashes since \\ is interpolated to a single \ even in single-quoted
+strings.
+
+=cut
+
 sub run {
     my $input = "meüep";
 
@@ -105,8 +113,6 @@ sub test_randomness {
     return;
 }
 
-# note that for some reason triple backslashes (and possibly above) need to be
-# doubled in these definitions for tests to work
 sub enkoder_tests {
     (
         0 => q|
