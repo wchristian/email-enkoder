@@ -55,7 +55,13 @@ my $default_enkoders = [
     },
 ];
 
-sub enkoders { $default_enkoders }
+=head1 FUNCTIONS
+
+=head2 enkode_mail
+
+Generates an obfuscated email link.
+
+=cut
 
 sub enkode_mail {
     my ( $email, $link_text, $options ) = @_;
@@ -68,6 +74,12 @@ sub enkode_mail {
 
     return $link;
 }
+
+=head2 enkode
+
+Generates obfuscated html out of arbitrary html.
+
+=cut
 
 sub enkode {
     my ( $html, $options ) = @_;
@@ -105,6 +117,23 @@ sub enkode {
     return $script_html;
 }
 
+=head1 HELPERS
+
+=head2 enkoders
+
+Returns the default enkoders used to obfuscate html.
+
+=cut
+
+sub enkoders { $default_enkoders }
+
+=head2 js_wrap_quote
+
+Takes a javascript string definition and wraps it to fit in a defined number of
+columns.
+
+=cut
+
 sub js_wrap_quote {
     my ( $str, $max_line_length ) = @_;
 
@@ -141,6 +170,13 @@ sub js_wrap_quote {
 
     return $result;
 }
+
+=head2 js_dbl_quote
+
+Takes a piece of javascript and quotes and escapes it for use as a string
+definition.
+
+=cut
 
 sub js_dbl_quote {
     my ( $in ) = @_;

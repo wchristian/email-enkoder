@@ -6,6 +6,32 @@ Email::Enkoder - obfuscate email or html with randomized javascript
 
 version 0.000001
 
+=head1 FUNCTIONS
+
+=head2 enkode_mail
+
+Generates an obfuscated email link.
+
+=head2 enkode
+
+Generates obfuscated html out of arbitrary html.
+
+=head1 HELPERS
+
+=head2 enkoders
+
+Returns the default enkoders used to obfuscate html.
+
+=head2 js_wrap_quote
+
+Takes a javascript string definition and wraps it to fit in a defined number of
+columns.
+
+=head2 js_wrap_quote
+
+Takes a piece of javascript and quotes and escapes it for use as a string
+definition.
+
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
 =head1 SUPPORT
